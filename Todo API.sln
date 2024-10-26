@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34714.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo API", "Todo API\Todo API.csproj", "{0CA7243D-B674-4266-B2FB-D3932FDCEA51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.Logic", "Todo.Logic\Todo.Logic.csproj", "{71C1507A-3067-4369-8819-99B29B991B44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.Entity", "Todo.Entity\Todo.Entity.csproj", "{54DEA768-2593-4FF6-A01B-520E20E7E964}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0CA7243D-B674-4266-B2FB-D3932FDCEA51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CA7243D-B674-4266-B2FB-D3932FDCEA51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CA7243D-B674-4266-B2FB-D3932FDCEA51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CA7243D-B674-4266-B2FB-D3932FDCEA51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71C1507A-3067-4369-8819-99B29B991B44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71C1507A-3067-4369-8819-99B29B991B44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71C1507A-3067-4369-8819-99B29B991B44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71C1507A-3067-4369-8819-99B29B991B44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54DEA768-2593-4FF6-A01B-520E20E7E964}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54DEA768-2593-4FF6-A01B-520E20E7E964}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54DEA768-2593-4FF6-A01B-520E20E7E964}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54DEA768-2593-4FF6-A01B-520E20E7E964}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {03FA2205-BE0D-4026-B5EF-8AACC7E0B13B}
+	EndGlobalSection
+EndGlobal
