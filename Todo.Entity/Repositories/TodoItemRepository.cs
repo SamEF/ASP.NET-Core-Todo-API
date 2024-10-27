@@ -86,7 +86,7 @@ public class TodoItemRepository : ITodoItemRepository
     public async Task CreateTodoItemAsync(TodoItem entity)
     {
         ArgumentNullException.ThrowIfNull(entity, nameof(entity));
-        if (entity.Id != 0)
+        if (entity.Id is not null)
         {
             // A defensive measure to make sure that the entity we
             // are adding to the database is not an existing one.

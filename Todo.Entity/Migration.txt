@@ -1,0 +1,9 @@
+# Open the Tools menu tab, then hover on 'NuGet Package Manager' and select 
+# the Package Manager Console to open a new terminal. Make sure you have the
+# default project as 'Todo.Entity' selected.
+
+# To add a new migration script use the following template:
+Add-Migration <MigrationName> -Context AppDbContext
+
+# To update the database with a newly added migration script:
+Update-Database -Context AppDbContext

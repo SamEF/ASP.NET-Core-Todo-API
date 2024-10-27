@@ -2,13 +2,14 @@
 using Todo.Entity.Entities;
 using Todo.Entity.Repositories.Interfaces;
 using Todo.Logic.Models;
+using Todo.Logic.Services.Interfaces;
 
 namespace Todo.Logic.Services;
 
 /// <summary>
 /// A class representation of a <see cref="TodoItemService"/> object.
 /// </summary>
-public class TodoItemService
+public class TodoItemService : ITodoItemService
 {
     private readonly ILogger<TodoItemService> logger;
     private readonly ITodoItemRepository repository;
@@ -99,6 +100,7 @@ public class TodoItemService
             {
                 Title = request.Title,
                 DueDate = request.DueDate,
+                IsCompleted = false, // Set to-do item completed to false by default on creation
             });
 
             return true;
@@ -141,6 +143,35 @@ public class TodoItemService
         catch (Exception ex)
         {
             this.logger.LogError(ex, "An error occurred while updating to-do item with Id {id}.", request.Id);
+            throw;
+        }
+    }
+
+    /// <summary>
+    /// Deletes an existing to-do item based on its identifier.
+    /// </summary>
+    /// <param name="id">The identifier of the to-do item to delete.</param>
+    /// <returns>True if successful; else false.</returns>
+    public async Task<bool> DeleteTodoItemByIdAsync(int id)
+    {
+        ArgumentOutOfRangeException.ThrowIfLessThanOrEqual(id, 0);
+
+        try
+        {
+            TodoItem? entity = await this.repository.RetrieveTodoItemByIdOrNullAsync(id);
+            if (entity is null)
+            {
+                this.logger.LogWarning("To-do item Id {id} not found.", id);
+                return false;
+            }
+
+            await this.repository.DeleteTodoItemAsync(entity);
+
+            return true;
+        }
+        catch (Exception ex)
+        {
+            this.logger.LogError(ex, "An error occurred while deleting to-do item with Id {id}.", id);
             throw;
         }
     }
